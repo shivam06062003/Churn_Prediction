@@ -1,0 +1,18 @@
+from graphviz import Digraph
+
+dot = Digraph(comment='Churn Prediction Process')
+dot.node('A', 'Churned Customer History')
+dot.node('B', 'Pattern Recognition')
+dot.node('C', 'Existing Customers')
+dot.node('D', 'Predictive Model')
+dot.node('E', 'Customers at Risk of Churn')
+dot.node('F', 'Proactive Re-engagement')
+dot.node('G', 'Happy Customers')
+
+dot.edges(['AB', 'AC'])
+dot.edge('B', 'D')
+dot.edge('D', 'E')
+dot.edge('E', 'F')
+dot.edge('F', 'G')
+
+dot.render('visualizations/churn_process_flow', format='png', view=True)
